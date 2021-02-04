@@ -1,32 +1,28 @@
 <template>
   <div class="uk-position-center">
     <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
-      <div><button v-on:click="newCurrentComponent('HelloWorld')" class="uk-button uk-button-large uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Account balance</button></div>
-      <div><button class="uk-button uk-button-large uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Cash Withdrawal</button></div>
-      <div><button class="uk-button uk-button-large uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Charge mobile phone</button></div>
-      <div><button class="uk-button uk-button-large uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Cancel</button></div>
+      <div><button v-on:click="newCurrentComponent('AccountBalance')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Account balance</button></div>
+      <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Cash Withdrawal</button></div>
+      <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Charge mobile phone</button></div>
+      <div><button v-on:click="newCurrentComponent('EndScreen')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">End Session</button></div>
     </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'StartScreen',
-  comments: {
-    HelloWorld
-  },
   props: {
     method: { type: Function }
   },
-  data: function () { // Note that data is a function!
+  data: function () {
     return {
-      //  navigation elements
       currentComponent: 'MainMenu'
     }
   },
   methods: {
+    // send new component to App.vue to change it
     newCurrentComponent: function (component) {
       this.currentComponent = component
       this.$emit('newComponent', this.currentComponent)

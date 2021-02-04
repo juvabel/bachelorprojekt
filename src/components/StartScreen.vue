@@ -6,22 +6,18 @@
 </template>
 
 <script>
-import MainMenu from '@/components/MainMenu.vue'
+
 export default {
   name: 'StartScreen',
-  comments: {
-    MainMenu
-  },
   props: {
   },
-  data: function () { // Note that data is a function!
+  data: function () {
     return {
-      //  navigation elements
-      currentComponent: 'StartScreen',
-      leap: true
+      currentComponent: 'StartScreen'
     }
   },
   methods: {
+    // send new component to App.vue to change it
     newCurrentComponent: function (component) {
       this.currentComponent = component
       this.$emit('newComponent', this.currentComponent)
