@@ -21,13 +21,14 @@ export default {
       this.currentComponent = component
       this.$emit('newComponent', this.currentComponent)
     },
-    successfullAuthentication: function () {
-      this.text = 'You\'re successfully authenticated.'
-      setTimeout(this.newCurrentComponent('EndScreen'), 1000)
+    successfulAuthentication: function () {
+      this.text = 'Welcome, Julia! You\'re successfully authenticated.'
+      console.log(this.text)
+      setTimeout(this.newCurrentComponent('EndScreen'), 7000)
     }
   },
   mounted () {
-    setTimeout(this.successfullAuthentication, 3000)
+    setTimeout(this.successfulAuthentication, 3000)
   }
 }
 </script>
