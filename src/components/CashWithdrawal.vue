@@ -1,10 +1,10 @@
 <template>
   <div class="uk-position-center uk-margin-medium-top">
       <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
-        <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">50€</button></div>
-        <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">100€</button></div>
-        <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">150€</button></div>
-        <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">200€</button></div>
+        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">50€</button></div>
+        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">100€</button></div>
+        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">150€</button></div>
+        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">200€</button></div>
     </div>
    <div class="uk-margin-medium-top uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
       <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Different amount</button></div>
