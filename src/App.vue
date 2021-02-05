@@ -17,6 +17,8 @@ import AccountBalance from '@/components/AccountBalance.vue'
 import CashWithdrawal from '@/components/CashWithdrawal.vue'
 import EndScreen from '@/components/EndScreen.vue'
 import Identification from '@/components/Identification.vue'
+import DifferentAmount from '@/components/DifferentAmount.vue'
+import DenominationSelection from '@/components/DenominationSelection.vue'
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 UIkit.use(Icons)
@@ -29,7 +31,9 @@ export default {
     AccountBalance,
     CashWithdrawal,
     EndScreen,
-    Identification
+    Identification,
+    DifferentAmount,
+    DenominationSelection
   },
   data: function () {
     return {
