@@ -7,7 +7,7 @@
         <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">200€</button></div>
     </div>
    <div class="uk-margin-medium-top uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
-      <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Different amount</button></div>
+      <div><button v-on:click="newCurrentComponent('DifferentAmount')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Different amount</button></div>
       <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Denomination selection</button></div>
       <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Back</button></div>
       <div><button v-on:click="newCurrentComponent('EndScreen')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">End session</button></div>
