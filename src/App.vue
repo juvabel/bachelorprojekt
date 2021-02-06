@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
 import StartScreen from '@/components/StartScreen.vue'
 import MainMenu from '@/components/MainMenu.vue'
 import AccountBalance from '@/components/AccountBalance.vue'
@@ -19,13 +18,13 @@ import EndScreen from '@/components/EndScreen.vue'
 import Identification from '@/components/Identification.vue'
 import DifferentAmount from '@/components/DifferentAmount.vue'
 import DenominationSelection from '@/components/DenominationSelection.vue'
+import ChargeMobilePhone from '@/components/ChargeMobilePhone.vue'
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 UIkit.use(Icons)
 export default {
   name: 'App',
   components: {
-    Header,
     StartScreen,
     MainMenu,
     AccountBalance,
@@ -33,7 +32,8 @@ export default {
     EndScreen,
     Identification,
     DifferentAmount,
-    DenominationSelection
+    DenominationSelection,
+    ChargeMobilePhone
   },
   data: function () {
     return {
