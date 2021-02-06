@@ -21,6 +21,7 @@
     </div>
         <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
         <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary">Back</button></div>
+        <div><button v-on:click="deleteLastCharacter()" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary">Delete</button></div>
         <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-2 uk-button-large button buttoncolor uk-text-large uk-text-secondary">Continue</button></div>
     </div>
   </div>
@@ -49,6 +50,14 @@ export default {
         this.chosenAmount = amount
       } else {
         this.chosenAmount = this.chosenAmount.concat(amount)
+      }
+    },
+    deleteLastCharacter: function () {
+      if (this.chosenAmount.length > 0) {
+        this.chosenAmount = this.chosenAmount.substring(0, this.chosenAmount.length - 1)
+      }
+      if (this.chosenAmount.length === 0) {
+        this.chosenAmount = '0'
       }
     }
   }

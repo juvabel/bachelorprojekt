@@ -3,7 +3,7 @@
     <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
       <div><button v-on:click="newCurrentComponent('AccountBalance')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Account balance</button></div>
       <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Cash Withdrawal</button></div>
-      <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Charge mobile phone</button></div>
+      <div><button v-on:click="newCurrentComponent('ChargeMobilePhone')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Charge mobile phone</button></div>
       <div><button v-on:click="newCurrentComponent('EndScreen')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">End Session</button></div>
     </div>
   </div>
