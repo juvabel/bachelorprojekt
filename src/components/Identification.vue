@@ -24,6 +24,7 @@ export default {
     successfulAuthentication: function () {
       this.text = 'Welcome, Julia! You\'re successfully authenticated.'
       console.log(this.text)
+      // timeout not working. Why? But runs function...
       setTimeout(this.newCurrentComponent('EndScreen'), 7000)
     }
   },

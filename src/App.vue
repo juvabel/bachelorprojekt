@@ -4,8 +4,8 @@
        <h1 class="bankname uk-heading-small">Vabel Bank</h1>
      </div>
       <component v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession"></component>
-      <!-- canvas - interaction zone -->
-      <canvas id="canvas" width="1200" height="600"></canvas>
+      <!-- interaction zone -->
+      <canvas id="canvas" width="1500" height="800"></canvas>
   </div>
 </template>
 
@@ -53,14 +53,10 @@ export default {
       console.log('Owlpost arrived!', this.currentComponent)
       return this.component
     },
+    // shows StartScreen
     startNewSession: async function (component) {
       this.mainMenuVisible = false
       this.currentComponent = component
-      // nutzlos
-      await this.sleep(3000)
-    },
-    sleep: function (milliseconds) {
-      return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
   },
   mounted () {
