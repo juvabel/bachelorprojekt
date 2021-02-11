@@ -3,7 +3,7 @@
      <div class="uk-width-1-1 header">
        <h1 class="bankname uk-heading-small">Vabel Bank</h1>
      </div>
-      <component v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession"></component>
+      <component :message='accountBalance' v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession"></component>
       <!-- interaction zone -->
       <canvas id="canvas" width="1500" height="800"></canvas>
   </div>
@@ -19,6 +19,7 @@ import Identification from '@/components/Identification.vue'
 import DifferentAmount from '@/components/DifferentAmount.vue'
 import DenominationSelection from '@/components/DenominationSelection.vue'
 import ChargeMobilePhone from '@/components/ChargeMobilePhone.vue'
+import Authentication from '@/components/Authentication.vue'
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 UIkit.use(Icons)
@@ -33,12 +34,14 @@ export default {
     Identification,
     DifferentAmount,
     DenominationSelection,
-    ChargeMobilePhone
+    ChargeMobilePhone,
+    Authentication
   },
   data: function () {
     return {
       currentComponent: 'StartScreen',
-      mainMenuVisible: false
+      mainMenuVisible: false,
+      accountBalance: 7593
     }
   },
   methods: {
@@ -104,11 +107,11 @@ export default {
           switch (gesture.type) {
             case 'circle':
               console.log('circle')
-              var el = document.elementFromPoint(x, y)
+              /** var el = document.elementFromPoint(x, y)
               console.log(el)
               if (el) {
                 el.click()
-              }
+              } **/
               break
             case 'swipe':
               console.log('swipe')
