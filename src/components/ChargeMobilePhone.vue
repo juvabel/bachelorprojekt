@@ -20,9 +20,9 @@
       <div><button v-on:click="updateAmount('0')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">0</button></div>
       </div>
         <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
-        <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary">Back</button></div>
-        <div><button v-on:click="deleteLastCharacter()" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary">Delete</button></div>
-        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-2 uk-button-large button buttoncolor uk-text-large uk-text-secondary">Continue</button></div>
+        <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-1-1 button buttoncolor uk-text-large uk-text-secondary back"><i class="fas fa-times fa-lg"></i>  Back</button></div>
+        <div><button v-on:click="deleteLastCharacter()" class="uk-button uk-width-1-1 button buttoncolor uk-text-large uk-text-secondary delete"><i class="fas fa-chevron-left fa-lg"></i>  Delete</button></div>
+        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-1 uk-button-large button buttoncolor uk-text-large uk-text-secondary continue"><i class="far fa-circle fa-lg"></i>  Continue</button></div>
     </div>
   </div>
   </div>
@@ -78,5 +78,17 @@ export default {
 
 .textsize {
     font-size: 25pt;
+}
+
+.back {
+  background-color: rgba(140, 45, 45, 0.31);
+}
+
+.delete {
+  background-color: rgba(219, 141, 37, 0.31);
+}
+
+.continue {
+  background-color: rgba(46, 154, 60, 0.31);
 }
 </style>
