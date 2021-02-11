@@ -57,8 +57,8 @@
       </div>
     </div>
                <div class="uk-margin-medium-top uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
-              <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary textsize">Back</button></div>
-              <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-2 uk-button-large button buttoncolor uk-text-large uk-text-secondary textsize">Continue</button></div>
+              <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary textsize back"><i class="fas fa-times fa-lg"></i>  Back</button></div>
+              <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-2 uk-button-large button buttoncolor uk-text-large uk-text-secondary textsize continue"><i class="far fa-circle fa-lg"></i>  Continue</button></div>
           </div>
  </div>
 </template>
@@ -150,5 +150,17 @@ export default {
 
 .textsize {
     font-size: 25pt;
+}
+
+.back {
+  background-color: rgba(140, 45, 45, 0.31);
+}
+
+.delete {
+  background-color: rgba(219, 141, 37, 0.31);
+}
+
+.continue {
+  background-color: rgba(46, 154, 60, 0.31);
 }
 </style>
