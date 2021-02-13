@@ -4,7 +4,7 @@
       <div><button v-on:click="newCurrentComponent('AccountBalance')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Account balance</button></div>
       <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Cash Withdrawal</button></div>
       <div><button v-on:click="newCurrentComponent('ChargeMobilePhone')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">Charge mobile phone</button></div>
-      <div><button v-on:click="newCurrentComponent('Authentication')" class="uk-button uk-width-expand uk-height-medium buttoncolor uk-text-large uk-text-secondary">End Session</button></div>
+      <div><button v-on:click="newCurrentComponent('Authentication')" class="uk-button uk-width-expand uk-height-medium endSession uk-text-large uk-text-secondary">End Session</button></div>
     </div>
   </div>
 </template>
@@ -35,5 +35,9 @@ export default {
 <style scoped lang="less">
 .buttoncolor{
   background: rgba(62, 157, 177, 0.31);
+}
+
+.endSession {
+  background-color: rgba(119, 119, 25, 0.31);
 }
 </style>

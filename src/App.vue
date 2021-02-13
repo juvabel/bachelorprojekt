@@ -39,7 +39,7 @@ export default {
   },
   data: function () {
     return {
-      currentComponent: 'StartScreen',
+      currentComponent: 'MainMenu',
       mainMenuVisible: false,
       accountBalance: 7593
     }

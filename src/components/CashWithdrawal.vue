@@ -1,12 +1,13 @@
 <template>
   <div class="uk-position-center uk-margin-small-top">
+    <p id="guidelines" class="uk-text-light uk-text-large uk-text-lead textsize uk-margin-small-top"> {{guidelines}} </p>
       <div class="uk-margin uk-flex uk-flex-center uk-grid-medium uk-child-width-expand" uk-grid>
-        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">50€</button></div>
-        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">100€</button></div>
-        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">150€</button></div>
+        <div><button v-on:click="checkAccountBalance(50)" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">50€</button></div>
+        <div><button v-on:click="checkAccountBalance(100)" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">100€</button></div>
+        <div><button v-on:click="checkAccountBalance(150)" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">150€</button></div>
     </div>
    <div class="uk-margin uk-flex uk-flex-center uk-grid-medium uk-child-width-expand" uk-grid>
-      <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">200€</button></div>
+      <div><button v-on:click="checkAccountBalance(200)" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">200€</button></div>
       <div><button v-on:click="newCurrentComponent('DifferentAmount')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Different amount</button></div>
       <div><button v-on:click="newCurrentComponent('DenominationSelection')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Denomination selection</button></div>
     </div>
@@ -21,10 +22,12 @@
 export default {
   name: 'CashWithdrawal',
   props: {
+    message: Number
   },
   data: function () {
     return {
-      currentComponent: 'CashWithdrawal'
+      currentComponent: 'CashWithdrawal',
+      guidelines: ''
     }
   },
   methods: {
@@ -32,6 +35,14 @@ export default {
     newCurrentComponent: function (component) {
       this.currentComponent = component
       this.$emit('newComponent', this.currentComponent)
+    },
+    checkAccountBalance: function (money) {
+      if (money <= this.message) {
+        this.newCurrentComponent('Identification')
+      } else {
+        this.guidelines = 'Sorry! You don\'t have enough money on you account.'
+        document.getElementById('guidelines').style.color = '#8C2D2D'
+      }
     }
   }
 }

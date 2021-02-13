@@ -1,32 +1,38 @@
 <template>
   <div class="uk-position-top uk-margin-large-top uk-margin-left uk-margin-right">
-          <p class="uk-text-light uk-text-large uk-text-lead textsize uk-margin-small-top">Total amount:</p>
+          <p id="guidelines" class="uk-text-light uk-text-large uk-text-lead textsize uk-margin-small-top"> {{guidelines}}</p>
     <div class="uk-card background uk-margin-left uk-margin-right">
       <p class="uk-text-large textsize"> {{totalAmount}} €</p>
     </div>
     <div class="uk-child-width-expand@s uk-margin-left uk-margin-right" uk-grid>
       <div class="card uk-margin-right">
         <div class="uk-child-width-expand@s" uk-grid>
-           <div class="uk-card" data-src="../assets/five.jpg" uk-img>
-              <p class="uk-text-large uk-position-center uk-text-bold"> 5€ </p>
+           <div class="uk-card">
+             <div class="uk-card-media-top uk-margin-medium-top">
+                <img src="assets/IMG_5.jpg" alt="">
             </div>
-            <div><button v-on:click="decreaseFive()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
+              <!-- <p class="uk-text-large uk-position-center uk-text-bold"> 5€ </p> -->
+            </div>
+            <div><button v-on:click="decreaseFive()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
             <div class="uk-card">
               <p class="uk-text-large  uk-position-center"> {{five}} </p>
             </div>
-            <div><button v-on:click="increaseFive()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
+            <div><button v-on:click="increaseFive()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
         </div>
       </div>
       <div class="card uk-margin-left">
         <div class="uk-child-width-expand@s" uk-grid>
           <div class="uk-card uk-margin">
-              <p class="uk-text-large  uk-position-center uk-text-bold"> 20€ </p>
+            <div class="uk-card-media-top uk-margin-medium-top">
+                <img src="assets/IMG_1275.jpg" alt="">
             </div>
-            <div><button v-on:click="decreaseTwenty()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
+              <!-- <p class="uk-text-large  uk-position-center uk-text-bold"> 20€ </p> -->
+            </div>
+            <div><button v-on:click="decreaseTwenty()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
             <div class="uk-card  uk-margin">
               <p class="uk-text-large  uk-position-center"> {{twenty}} </p>
             </div>
-            <div><button v-on:click="increaseTwenty()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
+            <div><button v-on:click="increaseTwenty()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
         </div>
       </div>
     </div>
@@ -34,31 +40,37 @@
       <div class="card uk-margin-right">
         <div class="uk-child-width-expand@s" uk-grid>
            <div class="uk-card">
-              <p class="uk-text-large  uk-position-center uk-text-bold"> 10€ </p>
+             <div class="uk-card-media-top uk-margin-medium-top">
+                <img src="assets/IMG_1273.jpg" alt="">
             </div>
-            <div><button v-on:click="decreaseTen()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
+              <!-- <p class="uk-text-large  uk-position-center uk-text-bold"> 10€ </p> -->
+            </div>
+            <div><button v-on:click="decreaseTen()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
             <div class="uk-card">
               <p class="uk-text-large uk-position-center"> {{ten}} </p>
             </div>
-            <div><button v-on:click="increaseTen()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
+            <div><button v-on:click="increaseTen()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
         </div>
       </div>
       <div class="card uk-margin-left">
         <div class="uk-child-width-expand@s" uk-grid>
           <div class="uk-card uk-margin">
-              <p class="uk-text-large uk-position-center uk-text-bold"> 50€ </p>
+            <div class="uk-card-media-top uk-margin-medium-top">
+                <img src="assets/IMG_1276.jpg" alt="">
             </div>
-            <div><button v-on:click="decreaseFifty()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
+              <!-- <p class="uk-text-large uk-position-center uk-text-bold"> 50€ </p> -->
+            </div>
+            <div><button v-on:click="decreaseFifty()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">-</button></div>
             <div class="uk-card  uk-margin">
               <p class="uk-text-large uk-position-center"> {{fifty}} </p>
             </div>
-            <div><button v-on:click="increaseFifty()" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
+            <div><button v-on:click="increaseFifty()" class="uk-text-bold uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">+</button></div>
         </div>
       </div>
     </div>
                <div class="uk-margin-medium-top uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
               <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-1-2 button buttoncolor uk-text-large uk-text-secondary textsize back"><i class="fas fa-times fa-lg"></i>  Back</button></div>
-              <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-2 uk-button-large button buttoncolor uk-text-large uk-text-secondary textsize continue"><i class="far fa-circle fa-lg"></i>  Continue</button></div>
+              <div><button v-on:click="checkIfValid" class="uk-button uk-width-1-2 uk-button-large button buttoncolor uk-text-large uk-text-secondary textsize continue"><i class="far fa-circle fa-lg"></i>  Continue</button></div>
           </div>
  </div>
 </template>
@@ -67,6 +79,7 @@
 export default {
   name: 'DenominationSelection',
   props: {
+    message: Number
   },
   data: function () {
     return {
@@ -75,7 +88,8 @@ export default {
       ten: 0,
       twenty: 0,
       fifty: 0,
-      totalAmount: 0
+      totalAmount: 0,
+      guidelines: 'Total amount:'
     }
   },
   methods: {
@@ -123,6 +137,14 @@ export default {
     increaseFifty: function () {
       this.fifty = this.fifty + 1
       this.totalAmount = this.totalAmount + 50
+    },
+    checkIfValid: function () {
+      if (this.totalAmount <= this.message) {
+        this.newCurrentComponent('Identification')
+      } else {
+        this.guidelines = 'Sorry! You don\'t have enough money on you account.'
+        document.getElementById('guidelines').style.color = '#8C2D2D'
+      }
     }
   }
 }
