@@ -79,7 +79,8 @@
 export default {
   name: 'DenominationSelection',
   props: {
-    message: Number
+    message: Number,
+    alreadyAuthenticated: Boolean
   },
   data: function () {
     return {
@@ -140,7 +141,11 @@ export default {
     },
     checkIfValid: function () {
       if (this.totalAmount <= this.message) {
-        this.newCurrentComponent('Authentication')
+        if (this.alreadyAuthenticated === false) {
+          this.newCurrentComponent('Authentication')
+        } else {
+          this.newCurrentComponent('BetweenTransactions')
+        }
       } else {
         this.guidelines = 'Sorry! You don\'t have enough money on you account.'
         document.getElementById('guidelines').style.color = '#8C2D2D'

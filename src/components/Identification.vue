@@ -19,19 +19,12 @@ export default {
   },
   methods: {
     // send new component to App.vue to change it
-    newCurrentComponent: function (component) {
-      this.currentComponent = component
-      this.$emit('newComponent', this.currentComponent)
-    },
-    successfulAuthentication: function () {
-      this.text = 'Welcome, Julia! You\'re successfully authenticated.'
-      console.log(this.text)
-      // timeout not working. Why? But runs function...
-      setTimeout(this.newCurrentComponent('EndScreen'), 3000)
+    newCurrentComponent: function () {
+      this.$emit('newComponent', 'BetweenTransactions')
     }
   },
   mounted () {
-    setTimeout(this.successfulAuthentication, 3000)
+    setTimeout(this.newCurrentComponent, 2000)
   }
 }
 </script>

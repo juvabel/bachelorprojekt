@@ -22,7 +22,7 @@
         <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
         <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button uk-width-1-1 button buttoncolor uk-text-large uk-text-secondary back"><i class="fas fa-times fa-lg"></i>  Back</button></div>
         <div><button v-on:click="deleteLastCharacter()" class="uk-button uk-width-1-1 button buttoncolor uk-text-large uk-text-secondary delete"><i class="fas fa-chevron-left fa-lg"></i>  Delete</button></div>
-        <div><button v-on:click="newCurrentComponent('Identification')" class="uk-button uk-width-1-1 uk-button-large button buttoncolor uk-text-large uk-text-secondary continue"><i class="far fa-circle fa-lg"></i>  Continue</button></div>
+        <div><button v-on:click="newCurrentComponent('Authentication')" class="uk-button uk-width-1-1 uk-button-large button buttoncolor uk-text-large uk-text-secondary continue"><i class="far fa-circle fa-lg"></i>  Continue</button></div>
     </div>
   </div>
   </div>
@@ -32,6 +32,7 @@
 export default {
   name: 'ChargeMobilePhone',
   props: {
+    alreadyAuthenticated: Boolean
   },
   data: function () {
     return {
@@ -43,7 +44,15 @@ export default {
     // send new component to App.vue to change it
     newCurrentComponent: function (component) {
       this.currentComponent = component
-      this.$emit('newComponent', this.currentComponent)
+      if (this.currentComponent === 'Authentication') {
+        if (this.alreadyAuthenticated === false) {
+          this.$emit('newComponent', this.currentComponent)
+        } else {
+          this.$emit('newComponent', 'BetweenTransactions')
+        }
+      } else {
+        this.$emit('newComponent', this.currentComponent)
+      }
     },
     updateAmount: function (amount) {
       if (this.mobileNumber === '0') {

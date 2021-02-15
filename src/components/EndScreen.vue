@@ -1,6 +1,6 @@
 <template>
   <div class="uk-position-center">
-        <h1 class="uk-heading-small uk-text-light">Good bye!</h1>
+        <h1 class="uk-heading-small uk-text-light">Thank you for your transaction!</h1>
   </div>
 </template>
 

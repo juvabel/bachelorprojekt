@@ -3,7 +3,7 @@
      <div class="uk-width-1-1 header">
        <h1 class="bankname uk-heading-small">Vabel Bank</h1>
      </div>
-      <component :message='accountBalance' :auth='authentication' v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession" v-on:authenticationClicked="authenticationClicked"></component>
+      <component :message='accountBalance' :auth='authentication' :alreadyAuthenticated='alreadyAuthenticated' v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession" v-on:authenticationClicked="authenticationClicked" v-on:changeAlreadyAuthenticated="setAlreadyAuthenticated"></component>
       <!-- interaction zone -->
       <canvas id="canvas" width="1500" height="800"></canvas>
   </div>
@@ -20,6 +20,7 @@ import DifferentAmount from '@/components/DifferentAmount.vue'
 import DenominationSelection from '@/components/DenominationSelection.vue'
 import ChargeMobilePhone from '@/components/ChargeMobilePhone.vue'
 import Authentication from '@/components/Authentication.vue'
+import BetweenTransactions from '@/components/BetweenTransactions.vue'
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 UIkit.use(Icons)
@@ -35,14 +36,16 @@ export default {
     DifferentAmount,
     DenominationSelection,
     ChargeMobilePhone,
-    Authentication
+    Authentication,
+    BetweenTransactions
   },
   data: function () {
     return {
       currentComponent: 'StartScreen',
       mainMenuVisible: false,
       accountBalance: 7593,
-      authentication: false
+      authentication: false,
+      alreadyAuthenticated: false
     }
   },
   methods: {
@@ -67,6 +70,11 @@ export default {
         this.authentication = true
       } else {
         this.authentication = false
+      }
+    },
+    setAlreadyAuthenticated: function () {
+      if (this.alreadyAuthenticated === false) {
+        this.alreadyAuthenticated = true
       }
     }
   },
