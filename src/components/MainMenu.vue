@@ -1,7 +1,7 @@
 <template>
   <div class="uk-position-center uk-margin-medium-top">
     <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand uk-margin-left uk-margin-right" uk-grid>
-      <div><button v-on:click="newCurrentComponent('AccountBalance')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Account balance</button></div>
+      <div><button v-on:click="authenticationClicked('Authentication')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Account balance</button></div>
       <div><button v-on:click="newCurrentComponent('CashWithdrawal')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Cash Withdrawal</button></div>
       <div>
         <p class="uk-text-large uk-text-bold">Navigation:</p>
@@ -10,7 +10,7 @@
     </div>
     <div class="uk-margin uk-flex uk-flex-center uk-grid-large uk-child-width-expand uk-margin-left uk-margin-right" uk-grid>
       <div><button v-on:click="newCurrentComponent('ChargeMobilePhone')" class="uk-button uk-width-expand uk-height-small buttoncolor uk-text-large uk-text-secondary">Charge mobile phone</button></div>
-      <div><button v-on:click="newCurrentComponent('Authentication')" class="uk-button uk-width-expand uk-height-small endSession uk-text-large uk-text-secondary">End Session</button></div>
+      <div><button v-on:click="newCurrentComponent('EndScreen')" class="uk-button uk-width-expand uk-height-small endSession uk-text-large uk-text-secondary">End Session</button></div>
       <div>
         <img src="https://media.giphy.com/media/uF9ImUMtDq0FEfR2vV/giphy.gif"/>
       </div>
@@ -35,6 +35,10 @@ export default {
     newCurrentComponent: function (component) {
       this.currentComponent = component
       this.$emit('newComponent', this.currentComponent)
+    },
+    authenticationClicked: function () {
+      this.$emit('newComponent', 'Authentication')
+      this.$emit('authenticationClicked')
     }
   }
 }

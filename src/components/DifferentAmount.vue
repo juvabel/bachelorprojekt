@@ -71,9 +71,9 @@ export default {
       console.log(amount)
       if (amount <= this.message) {
         if (this.chosenAmount.length > 1 && (this.chosenAmount.charAt(this.chosenAmount.length - 1) === '0' || this.chosenAmount.charAt(this.chosenAmount.length - 1) === '5')) {
-          this.$emit('newComponent', 'Identification')
+          this.$emit('newComponent', 'Authentication')
         } else if (this.chosenAmount.length === 1 && this.chosenAmount === '5') {
-          this.$emit('newComponent', 'Identification')
+          this.$emit('newComponent', 'Authentication')
         } else {
           this.guidelines = 'The chosen amount is invalid. Please enter a valid one.'
           document.getElementById('guidelines').style.color = '#8C2D2D'

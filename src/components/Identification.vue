@@ -1,6 +1,7 @@
 <template>
   <div class="uk-position-center">
-        <h1 class="uk-heading-small uk-text-light">{{ text }}</h1>
+        <h1 class="uk-heading-small uk-text-light welcome">{{ welcome }}</h1>
+        <h1 class="uk-heading-small uk-text-light">{{ authmessage }}</h1>
   </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
   data: function () {
     return {
       currentComponent: 'Identification',
-      text: 'Welcome, Julia! You\'re successfully authenticated.'
+      welcome: 'Welcome, Julia!',
+      authmessage: 'You\'re successfully authenticated.'
     }
   },
   methods: {
@@ -36,5 +38,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+.welcome {
+  color: #3E9DB1;
+}
 
 </style>

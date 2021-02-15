@@ -3,7 +3,7 @@
      <div class="uk-width-1-1 header">
        <h1 class="bankname uk-heading-small">Vabel Bank</h1>
      </div>
-      <component :message='accountBalance' v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession"></component>
+      <component :message='accountBalance' :auth='authentication' v-bind:is="currentComponent" v-on:newComponent="changeComponent" v-on:endSession="startNewSession" v-on:authenticationClicked="authenticationClicked"></component>
       <!-- interaction zone -->
       <canvas id="canvas" width="1500" height="800"></canvas>
   </div>
@@ -41,7 +41,8 @@ export default {
     return {
       currentComponent: 'StartScreen',
       mainMenuVisible: false,
-      accountBalance: 7593
+      accountBalance: 7593,
+      authentication: false
     }
   },
   methods: {
@@ -60,6 +61,13 @@ export default {
     startNewSession: async function (component) {
       this.mainMenuVisible = false
       this.currentComponent = component
+    },
+    authenticationClicked: function () {
+      if (this.authentication === false) {
+        this.authentication = true
+      } else {
+        this.authentication = false
+      }
     }
   },
   mounted () {

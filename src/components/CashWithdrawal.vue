@@ -38,7 +38,7 @@ export default {
     },
     checkAccountBalance: function (money) {
       if (money <= this.message) {
-        this.newCurrentComponent('Identification')
+        this.newCurrentComponent('Authentication')
       } else {
         this.guidelines = 'Sorry! You don\'t have enough money on you account.'
         document.getElementById('guidelines').style.color = '#8C2D2D'

@@ -9,6 +9,7 @@
 export default {
   name: 'Authentication',
   props: {
+    auth: Boolean
   },
   data: function () {
     return {
@@ -18,7 +19,12 @@ export default {
   methods: {
     // send new component to App.vue to change it
     newCurrentComponent: function () {
-      this.$emit('newComponent', 'Identification')
+      if (this.auth === false) {
+        this.$emit('newComponent', 'Identification')
+      } else {
+        this.$emit('newComponent', 'AccountBalance')
+        this.$emit('authenticationClicked')
+      }
     },
     startVideo: async function () {
       const video = document.getElementById('video')
