@@ -12,7 +12,7 @@ export default {
   data: function () {
     return {
       currentComponent: 'Identification',
-      text: 'Please look into the camera for authentication.'
+      text: 'Welcome, Julia! You\'re successfully authenticated.'
     }
   },
   methods: {
