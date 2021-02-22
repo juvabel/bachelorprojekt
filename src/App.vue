@@ -118,36 +118,46 @@ export default {
       }
       // selection of items through gestures
       if (frame.gestures.length > 0) {
-        for (var i = 0; i < frame.gestures.length; i++) {
-          var gesture = frame.gestures[i]
-          switch (gesture.type) {
-            case 'circle':
-              console.log('circle')
-              /** var el = document.elementFromPoint(x, y)
-              console.log(el)
-              if (el) {
+        // for (var i = 0; i < frame.gestures.length; i++) {
+        // var gesture = frame.gestures[i]
+        var gesture = frame.gestures[0]
+        switch (gesture.type) {
+          case 'circle':
+            console.log('circle')
+            var circleCenter = gesture.center
+            var circleProgress = gesture.progress
+            var normal = frame.interactionBox.normalizePoint(circleCenter)
+
+            var x2 = ctx.canvas.width * normal[0]
+            var y2 = ctx.canvas.height * (1 - normal[1])
+            var el = document.elementFromPoint(x2, y2)
+            if (el) {
+              console.log('Element found')
+              if (circleProgress === 1) {
+                console.log(circleCenter)
                 el.click()
-              } **/
-              break
-            case 'swipe':
-              console.log('swipe')
-              break
-            case 'screenTap':
-              console.log('screenTap')
-              var element = document.elementFromPoint(x, y)
-              if (element) {
-                element.click()
               }
-              break
-            case 'keyTap':
-              console.log('keytap')
-              var elem = document.elementFromPoint(x, y)
-              if (elem) {
-                elem.click()
-              }
-              break
-          }
+            }
+            break
+          case 'swipe':
+            console.log('swipe')
+            break
+          case 'screenTap':
+            console.log('screenTap')
+            var element = document.elementFromPoint(x, y)
+            if (element) {
+              element.click()
+            }
+            break
+          case 'keyTap':
+            console.log('keytap')
+            var elem = document.elementFromPoint(x, y)
+            if (elem) {
+              elem.click()
+            }
+            break
         }
+        // }
       }
     })
   }

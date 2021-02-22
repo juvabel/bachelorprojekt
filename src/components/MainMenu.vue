@@ -23,7 +23,9 @@
 export default {
   name: 'StartScreen',
   props: {
-    method: { type: Function }
+    method: { type: Function },
+    auth: Boolean,
+    alreadyAuthenticated: Boolean
   },
   data: function () {
     return {
@@ -37,8 +39,13 @@ export default {
       this.$emit('newComponent', this.currentComponent)
     },
     authenticationClicked: function () {
-      this.$emit('newComponent', 'Authentication')
-      this.$emit('authenticationClicked')
+      if (this.alreadyAuthenticated === false) {
+        this.$emit('newComponent', 'Authentication')
+        this.$emit('changeAlreadyAuthenticated')
+        this.$emit('authenticationClicked')
+      } else {
+        this.$emit('newComponent', 'AccountBalance')
+      }
     }
   }
 }

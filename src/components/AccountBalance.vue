@@ -5,7 +5,7 @@
     </div>
    <div class="uk-margin-medium-top uk-flex uk-flex-center uk-grid-large uk-child-width-expand" uk-grid>
       <div><button v-on:click="newCurrentComponent('MainMenu')" class="uk-button  uk-width-expand uk-height-small continue uk-text-large uk-text-secondary">Continue</button></div>
-      <div><button class="uk-button uk-width-expand uk-height-small endSession uk-text-large uk-text-secondary">End session</button></div>
+      <div><button v-on:click="newCurrentComponent('EndScreen')" class="uk-button uk-width-expand uk-height-small endSession uk-text-large uk-text-secondary">End session</button></div>
     </div>
   </div>
 </template>
@@ -26,6 +26,7 @@ export default {
     newCurrentComponent: function (component) {
       this.currentComponent = component
       this.$emit('newComponent', this.currentComponent)
+      this.$emit('changeAlreadyAuthenticated')
     }
   }
 }
